@@ -25,5 +25,22 @@
             <span>);</span>
     </code>
     <p>É importante colocarmos as vírgulas após os dados. Também é importate o <strong>;</strong> para que digamos ao MySql que tudo aquilo é <strong>um</strong> código.</p>
+    <h3><strong>Para apagarmos qualquer banco de dados, basta digitar "drop database ...;" ou "drop table ...;" para apagar a tabela</strong></h3>
+    
+    <h2>Aprimorando a estrutura do banco de dados</h2>
+    <p>Diferente de antes, ao criarmos um banco de dados, precisamos inserir o UTF dele, já que o padrão não é o UTF8. Para isso, usaremos dois comandos, sendo eles:</p>
+    <code>
+        <span>default character set utf8</span>
+        <span>default collate utf8_general_ci;</span>
+    </code>
+    <p>Agora, iremos atualizar de fato a estrutura da tabela. Primeiro, utilizaremos outros tipos primitivos</p>
+    <p><strong>Alguns</strong> dos tipos primitivos: 
+        <ul>
+        <li>Numérico -> Inteiro, real, lógico</li>
+        <li>Data/tempo -> Date, DateTime, TimeStamp e etc</li>
+        <li>Literal -> Caractere, Texto, Binário, Coleção</li>
+        <li>Espacial -> Geometry, Point, Polygon, MultiPolygon</li>
+    </ul>
+    </p>
 </body>
 </html>
