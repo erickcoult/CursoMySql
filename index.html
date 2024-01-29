@@ -45,12 +45,12 @@
     <p>Então, teremos as seguintes estruturas; Nome, Nascimento, Sexo, Peso, Altura e Nascionalidade. Cada item desse utilizará um tipo primitivo.</p>
     <p>
         <ul>
-            <li>Nome; Utilizará Varchar(30) NOT NULL,  | Este NOT NULL pode ser usado em qualquer elemento, pois ele simboliza que aquele elemente tem a obrigatoriedade de ser preenchido.</li>
-            <li>Nascimento; Este utilizara a propriedade <strong>date</strong>  | Isso porque irá utilizar os dias/mes/ano</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+            <li><strong>Nome;</strong> Utilizará <strong>Varchar(30) NOT NULL,</strong>  | Este NOT NULL pode ser usado em qualquer elemento, pois ele simboliza que aquele elemente tem a obrigatoriedade de ser preenchido.</li>
+            <li><strong>Nascimento;</strong> Este utilizara a propriedade <strong>date</strong>  | Isso porque irá utilizar os dias/mes/ano</li>
+            <li><strong>Sexo;</strong> Este uilizaremos a propriedade <strong>enum('M','F')</strong>  | Isso fará com que este elemento aceite APENAS a letra M ou F</li>
+            <li><strong>Peso;</strong> Já aqui, teremos a propriedade <strong>decimal (5,2)</strong> | Neste 5,2 serão um total de 5 casas e o 2 é a quantidade de número <strong>apoós</strong> a vírgula</li>
+            <li><strong>Altura;</strong> Esse é a mesma propriedadedo anterior <strong>decima (3,2)</strong></li>
+            <li><strong>Nacionalidade;</strong> Por fim, utilizaremos <strong>varchar(20) DEFAULT 'Brasil'</strong>  |Esse DEFAULT significa que se não for digitado nada, automaticamente será inserido Brasil.</li>
         </ul>
     </p>
 </body>
