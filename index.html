@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
     <title>Curso MySql</title>
 </head>
+
 <body>
     <h1>Criando primeiro banco de dados</h1>
-    <p>Para criarmos primeiro uma tabela de banco de dados, devemos inserir o comando "<strong>Create database</strong> (nome do banco de dados);". Após isso, no canto superior, teremos o ícone de um raio escrito "<strong>execute the statemant</strong>". Com isso, finalmente criamos nosso banco de dados.</p>
+    <p>Para criarmos primeiro uma tabela de banco de dados, devemos inserir o comando "<strong>Create database</strong>
+        (nome do banco de dados);". Após isso, no canto superior, teremos o ícone de um raio escrito "<strong>execute
+            the statemant</strong>". Com isso, finalmente criamos nosso banco de dados.</p>
     <code>
         <span>Create database cadastro;</span>
     </code>
@@ -24,37 +28,77 @@
             <span>nacionalidade varchar(30)</span>
             <span>);</span>
     </code>
-    <p>É importante colocarmos as vírgulas após os dados. Também é importate o <strong>;</strong> para que digamos ao MySql que tudo aquilo é <strong>um</strong> código.</p>
-    <h3><strong>Para apagarmos qualquer banco de dados, basta digitar "drop database ...;" ou "drop table ...;" para apagar a tabela</strong></h3>
-    
-    <h2>Aprimorando a estrutura do banco de dados</h2>
-    <p>Diferente de antes, ao criarmos um banco de dados, precisamos inserir o UTF dele, já que o padrão não é o UTF8. Para isso, usaremos dois comandos, sendo eles:</p>
+    <p>É importante colocarmos as vírgulas após os dados. Também é importate o <strong>;</strong> para que digamos ao
+        MySql que tudo aquilo é <strong>um</strong> código.</p>
+    <h3><strong>Para apagarmos qualquer banco de dados, basta digitar "drop database ...;" ou "drop table ...;" para
+            apagar a tabela</strong></h3>
+
+    <h1>Aprimorando a estrutura do banco de dados</h1>
+    <p>Diferente de antes, ao criarmos um banco de dados, precisamos inserir o UTF dele, já que o padrão não é o UTF8.
+        Para isso, usaremos dois comandos, sendo eles:</p>
     <code>
         <span>default character set utf8</span>
         <span>default collate utf8_general_ci;</span>
     </code>
     <p>Agora, iremos atualizar de fato a estrutura da tabela. Primeiro, utilizaremos outros tipos primitivos</p>
-    <p><strong>Alguns</strong> dos tipos primitivos: 
-        <ul>
+    <p><strong>Alguns</strong> dos tipos primitivos:
+    <ul>
         <li>Numérico -> Inteiro, real, lógico</li>
         <li>Data/tempo -> Date, DateTime, TimeStamp e etc</li>
         <li>Literal -> Caractere, Texto, Binário, Coleção</li>
         <li>Espacial -> Geometry, Point, Polygon, MultiPolygon</li>
     </ul>
     </p>
-    <p>Então, teremos as seguintes estruturas; Nome, Nascimento, Sexo, Peso, Altura e Nascionalidade. Cada item desse utilizará um tipo primitivo.</p>
+    <p>Então, teremos as seguintes estruturas; Nome, Nascimento, Sexo, Peso, Altura e Nascionalidade. Cada item desse
+        utilizará um tipo primitivo.</p>
     <p>
-        <ul>
-            <li><strong>Nome;</strong> Utilizará <strong>Varchar(30) NOT NULL,</strong>  | Este NOT NULL pode ser usado em qualquer elemento, pois ele simboliza que aquele elemente tem a obrigatoriedade de ser preenchido.</li>
-            <li><strong>Nascimento;</strong> Este utilizara a propriedade <strong>date</strong>  | Isso porque irá utilizar os dias/mes/ano</li>
-            <li><strong>Sexo;</strong> Este uilizaremos a propriedade <strong>enum('M','F')</strong>  | Isso fará com que este elemento aceite APENAS a letra M ou F</li>
-            <li><strong>Peso;</strong> Já aqui, teremos a propriedade <strong>decimal (5,2)</strong> | Neste 5,2 serão um total de 5 casas e o 2 é a quantidade de número <strong>apoós</strong> a vírgula</li>
-            <li><strong>Altura;</strong> Esse é a mesma propriedadedo anterior <strong>decima (3,2)</strong></li>
-            <li><strong>Nacionalidade;</strong> Por fim, utilizaremos <strong>varchar(20) DEFAULT 'Brasil'</strong>  |Esse DEFAULT significa que se não for digitado nada, automaticamente será inserido Brasil.</li>
-        </ul>
+    <ul>
+        <li><strong>Nome;</strong> Utilizará <strong>Varchar(30) NOT NULL,</strong> | Este NOT NULL pode ser usado em
+            qualquer elemento, pois ele simboliza que aquele elemente tem a obrigatoriedade de ser preenchido.</li>
+        <li><strong>Nascimento;</strong> Este utilizara a propriedade <strong>date</strong> | Isso porque irá utilizar
+            os dias/mes/ano</li>
+        <li><strong>Sexo;</strong> Este uilizaremos a propriedade <strong>enum('M','F')</strong> | Isso fará com que
+            este elemento aceite APENAS a letra M ou F</li>
+        <li><strong>Peso;</strong> Já aqui, teremos a propriedade <strong>decimal (5,2)</strong> | Neste 5,2 serão um
+            total de 5 casas e o 2 é a quantidade de número <strong>apoós</strong> a vírgula</li>
+        <li><strong>Altura;</strong> Esse é a mesma propriedadedo anterior <strong>decima (3,2)</strong></li>
+        <li><strong>Nacionalidade;</strong> Por fim, utilizaremos <strong>varchar(20) DEFAULT 'Brasil'</strong> |Esse
+            DEFAULT significa que se não for digitado nada, automaticamente será inserido Brasil.</li>
+    </ul>
     </p>
-    <p>Porém, um problema que poderemos ter futuramente é a repetição de cadastro (como dois cadastros no mesmo CPF). Para isso, devemos criar uma <strong>Chave Primária</strong>. Ela nada mais é do que um fator que fará com que não seja permitido repetir os valores.</p>
-    <p>Para criarmos uma chave primária, devemos inserir, <strong>antes</strong> do código, um identificador numérico com a constante de NOT NULL. Também iremos pôr a constante <strong>AUTO_INCREMENT</strong>. Essa constante irá numerar (em ordem crescente), os cadastros de novos id (chaves primárias). Por fim, devemos inserior no <strong>final</strong> do código <strong>PRIME KEY (id)</strong>(o campo id pode ser alterado para qualquer nome)</p>
+    <p>Porém, um problema que poderemos ter futuramente é a repetição de cadastro (como dois cadastros no mesmo CPF).
+        Para isso, devemos criar uma <strong>Chave Primária</strong>. Ela nada mais é do que um fator que fará com que
+        não seja permitido repetir os valores.</p>
+    <p>Para criarmos uma chave primária, devemos inserir, <strong>antes</strong> do código, um identificador numérico
+        com a constante de NOT NULL. Também iremos pôr a constante <strong>AUTO_INCREMENT</strong>. Essa constante irá
+        numerar (em ordem crescente), os cadastros de novos id (chaves primárias). Por fim, devemos inserior no
+        <strong>final</strong> do código <strong>PRIME KEY (id)</strong>(o campo id pode ser alterado para qualquer
+        nome)</p>
     <p></p>
+    <code>
+    <span>create table pessoas (</span>
+    <span><strong>id int not null auto_increment,</strong></span>
+    <span>nome varchar(30) NOT NULL,</span>
+    <span>nascimento date,</span>
+    <span>sexo enum('M','F'),</span>
+    <span>peso decimal (5,2),</span>
+    <span>altura decimal(3,2),</span>
+    <span>nascionalidade varchar(20) DEFAULT 'Brasil',</span>
+    <span><strong>primary key (id)</strong></span>
+    <span>) default charset = utf8;</span> 
+    </code>
+
+    <h1>Inserindo dados na tabela</h1>
+    <p>Para estarmos inserindo os valores nos respectivos campos, devemos, primeiro, selecionar e abrir o banco
+        cadastro. Após isso, devemos inserir o comando <strong>INSERT INTO pessoas</strong> e depois todos os campos
+        entre parênteses (Exceto o ID, pois já tem o auto_increment). Por fim, na outra linha, colocamos
+        <strong>VALUES</strong> e os valores que desejamos entre <strong>aspas simples</strong>.</p>
+    <code>
+        <span>insert into pessoas</span>
+        <span>(nome, nascimento, sexo, peso, altura, nascionalidade)</span>
+        <span>values</span>
+        <span>('Godofredo', '1995-02-06', 'M', '78.5', '1.83', 'Brasil');</span>
+    </code>
 </body>
+
 </html>
