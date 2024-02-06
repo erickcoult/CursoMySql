@@ -53,5 +53,8 @@
             <li><strong>Nacionalidade;</strong> Por fim, utilizaremos <strong>varchar(20) DEFAULT 'Brasil'</strong>  |Esse DEFAULT significa que se não for digitado nada, automaticamente será inserido Brasil.</li>
         </ul>
     </p>
+    <p>Porém, um problema que poderemos ter futuramente é a repetição de cadastro (como dois cadastros no mesmo CPF). Para isso, devemos criar uma <strong>Chave Primária</strong>. Ela nada mais é do que um fator que fará com que não seja permitido repetir os valores.</p>
+    <p>Para criarmos uma chave primária, devemos inserir, <strong>antes</strong> do código, um identificador numérico com a constante de NOT NULL. Também iremos pôr a constante <strong>AUTO_INCREMENT</strong>. Essa constante irá numerar (em ordem crescente), os cadastros de novos id (chaves primárias). Por fim, devemos inserior no <strong>final</strong> do código <strong>PRIME KEY (id)</strong>(o campo id pode ser alterado para qualquer nome)</p>
+    <p></p>
 </body>
 </html>
