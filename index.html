@@ -108,6 +108,23 @@
         <span>select * from pessoas</span>
     </code>
     <p>Por fim, para vermos os cadastros, basta inserir o comando <strong>select * from pessoas</strong> ao final de tudo.</p>
-</body>
 
+    <h1>Alterando a estrutura da tabela</h1>
+    <p>Para fazermos qualquer alteração em uma tabela, devemos primeiro utilizar o comando <strong>Alter Table</strong>. Só assim podemos adicionar o comando que desejamos fazer a mudança como Adicionar, remover, adionar após, adicionar primeiro e etc. Sendo assim, temos:</p>
+    <code>
+        <span><strong>alter table</strong> pessoas</span>
+        <span></span>
+        <span><strong>add</strong> colum profissao varchar(10); -> Adiona uma coluna</span>
+        <span></span>
+        <span>add colum profissao varchar(10) <strong>after</strong> nome; -> Adiciona após a coluna nome</span>
+        <span></span>
+        <span>add colum codigo int <strong>first</strong>; -> Adiciona coluna como a primeira posição</span>
+        <span></span>
+        <span><strong>drop</strong> colum profissao; -> Remove uma coluna </span>
+        <span></span>
+        <span>* inserir colum é <strong>opcional</strong></span>
+        
+    </code>
+
+</body>
 </html>
