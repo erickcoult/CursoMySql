@@ -99,6 +99,15 @@
         <span>values</span>
         <span>('Godofredo', '1995-02-06', 'M', '78.5', '1.83', 'Brasil');</span>
     </code>
+    <p>Para inserir vários cadastros de uma vez, apenas inserimos o <strong>insert into pessoas values</strong> e inserir uma <strong>vírgula</strong> entre cada castro. Deve-se lembrar de seguir a mesma ordem em que criamos no banco de dados (id, nome, nascimento, sexo, peso, altura, nascionalidade).</p>
+    <code>
+        <span>insert into pessoas values</span>
+        <span>('Godofredo', '1995-02-06', 'M', '78.5', '1.83', 'Brasil'),</span>
+        <span>(default, 'Janaina', '2003-02-02', 'F' '120.4', '1.54', default);</span>
+        <span></span>
+        <span>select * from pessoas</span>
+    </code>
+    <p>Por fim, para vermos os cadastros, basta inserir o comando <strong>select * from pessoas</strong> ao final de tudo.</p>
 </body>
 
 </html>
