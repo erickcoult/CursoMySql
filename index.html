@@ -30,6 +30,7 @@
     </code>
     <p>É importante colocarmos as vírgulas após os dados. Também é importate o <strong>;</strong> para que digamos ao
         MySql que tudo aquilo é <strong>um</strong> código.</p>
+    <p>Entretanto, devemos utilizar mais a função "<strong>create  table if not exists teste</strong>", pois isso nos indica que, se caso a tabela <strong>NÃO</strong> existir, ela será criada. Isso pois caso criamos uma tabela ( ou banco de dados) com mesmo nome, haverá substituição do mesmo, assim, perdendo todo conteúdo original.</p>
     <h3><strong>Para apagarmos qualquer banco de dados, basta digitar "drop database ...;" ou "drop table ...;" para
             apagar a tabela</strong></h3>
 
@@ -72,7 +73,7 @@
     <p>Para criarmos uma chave primária, devemos inserir, <strong>antes</strong> do código, um identificador numérico
         com a constante de NOT NULL. Também iremos pôr a constante <strong>AUTO_INCREMENT</strong>. Essa constante irá
         numerar (em ordem crescente), os cadastros de novos id (chaves primárias). Por fim, devemos inserior no
-        <strong>final</strong> do código <strong>PRIME KEY (id)</strong>(o campo id pode ser alterado para qualquer
+        <strong>final</strong> do código <strong>PRIMARY KEY (id)</strong>(o campo id pode ser alterado para qualquer
         nome)</p>
     <p></p>
     <code>
@@ -122,8 +123,13 @@
         <span></span>
         <span><strong>drop</strong> colum profissao; -> Remove uma coluna </span>
         <span></span>
-        <span>* inserir colum é <strong>opcional</strong></span>
-        
+        <span><strong>modify</strong> colum profissao varchar(20); -> modifica os tipos primitivos e as constants da coluna</span>
+        <span></span>
+        <span><strong>change</strong> colum profissao prof varchar(20) -> altera o nome da coluna de profissao para prof</span>
+        <span></span>
+        <span><strong>rename to</strong> gafanhotos/ -> altera o nome da <strong>tabela</strong></span>
+        <span></span>
+        <span>* inserir a palavra "colum" é <strong>opcional</strong></span>
     </code>
 
 </body>
