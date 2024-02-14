@@ -30,7 +30,7 @@
     </code>
     <p>É importante colocarmos as vírgulas após os dados. Também é importate o <strong>;</strong> para que digamos ao
         MySql que tudo aquilo é <strong>um</strong> código.</p>
-    <p>Entretanto, devemos utilizar mais a função "<strong>create  table if not exists teste</strong>", pois isso nos indica que, se caso a tabela <strong>NÃO</strong> existir, ela será criada. Isso pois caso criamos uma tabela ( ou banco de dados) com mesmo nome, haverá substituição do mesmo, assim, perdendo todo conteúdo original.</p>
+    <p><strong>****</strong>Entretanto, devemos utilizar mais a função "<strong>create  table if not exists teste</strong>", pois isso nos indica que, se caso a tabela <strong>NÃO</strong> existir, ela será criada. Isso pois caso criamos uma tabela ( ou banco de dados) com mesmo nome, haverá substituição do mesmo, assim, perdendo todo conteúdo original.</p>
     <h3><strong>Para apagarmos qualquer banco de dados, basta digitar "drop database ...;" ou "drop table ...;" para
             apagar a tabela</strong></h3>
 
@@ -130,6 +130,35 @@
         <span><strong>rename to</strong> gafanhotos/ -> altera o nome da <strong>tabela</strong></span>
         <span></span>
         <span>* inserir a palavra "colum" é <strong>opcional</strong></span>
+    </code>
+
+    <h1>Manipulando linhas</h1>
+    <p>Aprendemos como manipular colunas e tabelas anteriormente. Entretanto, para podermos <strong>modificar</strong> as linhas incorretas, utilizamos uma estrutura sendo</p>
+    <ul>
+        <li><strong>Update</strong> -> nome da tabela</li>
+        <li><strong>Set</strong> -> nome da coluna e o que será atulizado</li>
+        <li><strong>Where</strong> -> nome e número que a linha se econtra</li>
+    </ul>
+    <code>
+        <span>update cursos</span>
+        <span>set nome = 'HTML5'</span>
+        <span>where idcurso = '1';</span>
+    </code>
+    <p>Para <strong>atualizarmos</strong> várias linhas, basta apenas inserirmos uma vírgula e o nome da coluna. Também podemos <strong>limitar</strong> a quantidade de linhas afetadas para que não haja um erro grande, utilizando <strong>Limit 1</strong>(ou a quantidade de linha que queremos que seja afetadas)</p>
+    <code>
+        <span>update cursos</span>
+        <span>set nome = 'PHP', ano ='2015'</span>
+        <span>where idcurso ='4';</span>
+        <span>limit 1</span>
+    </code>
+    <p>Agora, caso desejamos <strong>remover uma linha</strong>, basta utilizarmos o comado <strong>Delete from</strong>(nome da tabela) e <strong>Where</strong>(nome da linha)</p>
+    <code>
+        <span>Delete from pessoas</span>
+        <span>Where idcurso = '8';</span>
+    </code>
+    <p>Por fim, para apagarmos <strong>TODAS</strong> as linhas, utilizamos o código <strong>truncate table[opcional]</strong>(nome da tabela)</p>
+    <code>
+        <span>truncate cursos;</span>
     </code>
 
 </body>
