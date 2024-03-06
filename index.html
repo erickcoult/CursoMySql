@@ -174,7 +174,7 @@
     <p>Podemos também utilizaer operadores lógicos para efetuarmos nosso select</p>
     <code>
         <span>select nome, descrição, ano from cursos</span>
-        <span>where ano 2016 or 2017</span>
+        <span>where ano 2016 <strong>or</strong> 2017</span>
         <span>order by ano, nome;</span>
     </code>
     <p>Também temos uma <strong>operador</strong> em mysql que se chama <strong>'Like'</strong>. Esse operador tem como função de achar LETRAS nas tabela. Por exemplo, caso desejamos filtrar a tabela para que tudo que tenha a letra A apareça, bastando utilizar o comando "<strong>like '%a';</strong>". Este <strong>%</strong> serve como uma 'carta coringa'. Ele tem a função de preencher o restante, por exemplo a função "like 'A$'; Nela, tudo que tenha a primeira palavra A, será mostrado. Agora "Like '%a'" mostrará todas as palavras que <strong>terminam</strong> com a letra A. Podemos fazer com <strong>NOT</strong> ou outros <strong>operadores</strong></p>
@@ -184,6 +184,19 @@
         <span>where nome like 'A$';  - Mostrará palavras que tenham A no <strong>início</strong></span>
         <span>where nome like 'PH%P'; - Mostrará palavras que tenham PH no <strong>início</strong> e que <strong>terminam</strong> com P</span>
         <span>where nome like 'PH%P_'; - Mostrará palavras que tenham PH no início, P no meio e <strong>um caracter(alguma coisa)</strong> depois.</span>
+    </code>
+    <h2>Distinct</h2>
+    <p>Vamos supor que dentro da tabela cursos, temos diversos cadastros de pessoas com nacionalidade de diversos países. Entretanto, como terá muitas pessoas, as chances dos nomes dos países se repetirem, são altas. Para resolver isso, temos o <strong>select distinct</strong> que nos mostrará todos as nacionalidades da tabela, sem repetir o mesmo nome.</p>
+    <code>
+       <span>select distinct carga from cursos</span>
+       <span>order by carga;</span>
+    </code>
+    <h2>Funções de agregação</h2>
+    <p>Como pelo próprio nome já diz, ela possui a função de agregar na nossa tabela</p>
+    <code>
+        <span>select <strong>count</strong>(*) from cursos -> contará e mostrará quantos registros possui na tabela cursos</span>
+        <span>select <strong>max</strong>(totalaulas) from cursos -> mostrará o maior valores de aulas que existe na tabela</span>
+        <span>select <strong>min</strong>(totalaulas) from cursos -> mostrará o menor valor de aulas que existe na tabela</span>
     </code>
 </body>
 </html>
